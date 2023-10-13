@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ Fantasy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+        body {
+            background-image: url(./assets/5185528.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.25);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            padding: 38px;
+            filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 50px 10px;
+            margin-top: 100px;
+            /* overflow: hidden; */
+
+        }
+
+        .circle {
+             position: relative;
+             z-index: -1;
+            -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+            filter: blur(5px);
+
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, rgb(128, 250, 181) 0%, rgb(255, 255, 255) 110%);
+            border-radius: 50%;
+            border: none;
+           
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+           
+        }
+
+        .top-circle {
+            position: relative;
+            top: 0px;
+            left: 220px;
+
+        }
+
+        .bottom-circle {
+            width: 70px;
+            height: 70px;
+            position: relative;
+            bottom: 30px;
+            right: 210px;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+        }
+
+        .banner-image {
+            background-image: url("./assets/RJfantasy.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 250px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.255)
+        }
+
+        h1 {
+            font-family: 'Righteous', sans-serif;
+            color: rgba(255, 255, 255, 0.98);
+            /* text-transform: uppercase; */
+            letter-spacing: 2px;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 150%;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .button-wrapper {
+            margin-top: 18px;
+        }
+
+
+        .btn {
+            all: unset;
+            width: 150px;
+            height: 30px;
+            font-size: 16px;
+            background: transparent;
+            font-weight: 600;
+            border: none;
+            position: relative;
+            color: #000000;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .btn::after,
+        .btn::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .btn::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #6ff9ad;
+            border-radius: 10px;
+        }
+
+        .btn::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .btn:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .btn:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        .fill {
+            background: rgba(0, 212, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+            filter: drop-shadow(0);
+            font-weight: bold;
+            transition: all .3s ease;
+        }
+
+        .fill:hover {
+            transform: scale(1.125);
+            border-color: rgba(255, 255, 255, 0.9);
+            filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+            transition: all .3s ease;
+        }
+
+        @media only screen and (max-width:480px) {
+            .top-circle {
+                bottom: 70px;
+                left: 130px;
+            }
+
+            .bottom-circle {
+                top: 20px;
+                right: 150px;
+                z-index: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://telegram.me/+FMVtIt6dPpRkZmY1">
+        <div class="container">
+            <div class="top-circle circle">
+            </div>
+            <div class="wrapper">
+                <div class="banner-image"> </div>
+                <h1>Open Channel On <br> Telegram App</h1>
+                <p>🏏 Join Our Telegram Community for Winning Cricket Fantasy Teams!🏏</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn outline">Join Now</button>
+            </div>
+            <p><b>
+              🌟Get Expert Insights, <br>Build Dream Teams, and<br> Win Cash Prizes!🌟
+              
+              </b></p>
+            <div class="bottom-circle circle">
+            </div>
+        </div>
+
+    </a>
+
+</body>
+
+
+</html>
